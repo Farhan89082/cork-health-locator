@@ -1,0 +1,427 @@
+/* src/App.css */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f5f7fb;
+  color: #1f2933;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero */
+.hero {
+  padding: 1.5rem 1.25rem 1rem;
+  background: linear-gradient(135deg, #0f766e, #0369a1);
+  color: white;
+}
+
+.hero-text {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.hero-subtitle {
+  margin: 0 0 0.75rem;
+  opacity: 0.9;
+}
+
+.hero-list {
+  margin: 0 0 1rem;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.btn.primary {
+  background: #fbbf24;
+  color: #1f2933;
+  font-weight: 600;
+}
+
+.btn.secondary {
+  background: rgba(15, 23, 42, 0.15);
+  color: #e5e7eb;
+}
+
+.btn.outline {
+  border: 1px solid #cbd2e1;
+  background: white;
+  color: #111827;
+}
+
+.btn.small {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+}
+
+.btn.full {
+  width: 100%;
+}
+
+/* Layout */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.map-section {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.map-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.map-toolbar-title {
+  font-weight: 600;
+}
+
+.map-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nearest-label {
+  font-size: 0.8rem;
+  color: #0f766e;
+}
+
+.map-container {
+  width: 100%;
+  height: 260px;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+
+/* Alert */
+.alert {
+  margin: 0 0 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.8rem;
+}
+
+/* Sidebar */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filters-card,
+.list-card,
+.details-card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+}
+
+.filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Chips */
+/* Default (inactive) filter chips */
+.chip {
+  border-radius: 999px;
+  border: 1px solid #d0d7e2;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.8rem;
+  background: #e5e7eb;        /* Light grey background */
+  color: #111827;             /* Dark text */
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.chip:hover {
+  background: #d1d5db;        /* Slightly darker on hover */
+}
+
+/* Active chip */
+.chip-active {
+  background: #0f766e;        /* Green */
+  color: white;               /* White text */
+  border-color: #0f766e;
+}
+
+
+.chip-active {
+  background: #0f766e;
+  color: white;
+  border-color: #0f766e;
+}
+
+/* Search */
+.search-input {
+  width: 100%;
+  border-radius: 999px;
+  border: 1px solid #d0d7e2;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.results-count {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* List */
+.list-scroll {
+  max-height: 260px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.location-card {
+  text-align: left;
+  border-radius: 0.6rem;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 0.45rem 0.5rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+
+.location-card-active {
+  background: #ecfdf5;
+  border-color: #0f766e;
+  transform: translateY(-1px);
+}
+
+.location-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.location-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;  /* dark grey (almost black) */
+}
+
+
+.location-line {
+  margin: 0.1rem 0;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.badge-pharmacy {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.badge-walkin {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge-student {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+/* Details */
+.details-title {
+  margin: 0 0 0.2rem;
+}
+
+.details-type {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.details-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr 1fr;
+  font-size: 0.85rem;
+}
+
+.details-grid h4 {
+  margin: 0 0 0.2rem;
+}
+
+.details-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.details-edu {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+/* Educational section */
+.educational-section {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0.75rem auto 1rem;
+  padding: 0 0.75rem;
+}
+
+.edu-toggle {
+  width: 100%;
+  border: none;
+  border-radius: 0.75rem;
+  background: white;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.edu-content {
+  margin-top: 0.6rem;
+  background: white;
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+}
+
+.edu-grid {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.edu-card {
+  padding: 0.65rem 0.7rem;
+  border-radius: 0.6rem;
+  background: #f9fafb;
+  font-size: 0.86rem;
+}
+
+.edu-card h3 {
+  margin-top: 0;
+}
+
+.edu-note {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: #b91c1c;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Empty state */
+.empty-state {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Desktop layout */
+@media (min-width: 900px) {
+  .hero {
+    padding: 1.8rem 1.5rem 1.3rem;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .main-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .map-section {
+    flex: 2;
+  }
+
+  .sidebar {
+    flex: 1.2;
+  }
+
+  .map-container {
+    height: 360px;
+  }
+
+  .edu-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
